@@ -41,12 +41,52 @@ const { address, ...userWithoutAddress } = user;
 
 //In user object get all values that are string and uppercase them.
 const x = "age";
-console.log(user[x]);
+// console.log(user[x]);
 
-for (const prop in user) {
-  const type = typeof user[prop];
-  if (type === "string") {
-    user[prop] = user[prop].toUpperCase();
-  }
-}
-console.log(user);
+//
+
+const array = ["apple", "banana", 2, "lemon", "waterlemon", 8, "pineapple", "passion fruit"];
+
+const array2 = ["apple", "tomato", "potato"];
+
+// array.push("cos"); // adds element at end of array
+// array.unshift("costam"); // adds element at the start of array
+// array.shift(); //removes element from the start of array
+// array.pop(); // removed element from the end of array
+// array.splice(1, 0, "cos2"); // adds/removes element to modify array to add or remove element after certain index number
+
+// array.splice(4, 0, "dupa");
+
+// array.pop();
+// array.shift();
+
+// console.log(Array.from(new Set([...array, ...array2]))); // one liner for the below
+
+const newArray = [...array, ...array2]; //merges both arrays
+
+const newArrayWithoutDuplicates = new Set(newArray); //creates a new set from the newArray which removes duplicated values
+
+const setArray = Array.from(newArrayWithoutDuplicates); //turns set into array
+
+// console.log(setArray.includes("apple"));
+
+// for (const item of array) {
+//   if (typeof item === "string") {
+//     console.log(item);
+//   }
+// }
+
+const slowo = "stefan";
+
+// console.log(slowo.split(""));
+
+const capitalizeLetter = (word) => {
+  const arrayFromWord = word.split("");
+  const gowno = [arrayFromWord[0].toUpperCase(), ...arrayFromWord];
+  gowno.splice(1, 1);
+  return gowno.join("");
+};
+
+capitalizeLetter(slowo);
+
+console.log(capitalizeLetter(slowo));
